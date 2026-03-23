@@ -75,18 +75,9 @@ const sectors = [
 
 // Team members data
 const teamMembers = [
+
   {
     id: 1,
-    name: 'ALHAISOUNI, SAIF GHAZY K',
-    role: 'Chief Executive Officer (CEO)',
-    title: 'Global Inventor & Strategic Researcher',
-    image: '/saif.png',
-    whatsapp: '+966546503807',
-    email: 'saif@virex-ai.com',
-    description: 'Global Inventor & Strategic Researcher | Aviation Weather Specialist | MSc in Climate Change: Aviation Public Relations (UK)',
-  },
-  {
-    id: 2,
     name: 'ALAMRI, ALI MOHAMMAD A',
     role: 'Managing Director (MD)',
     title: 'Strategic Leadership & Business Development',
@@ -94,6 +85,17 @@ const teamMembers = [
     whatsapp: '+966569920060',
     email: 'ali@virex-ai.com',
     description: 'Drives strategic vision and operational growth, ensuring alignment with organizational goals.',
+  },
+
+  {
+    id: 2,
+    name: 'ALHAISOUNI, SAIF GHAZY K',
+    role: 'Chief Executive Officer (CEO)',
+    title: 'Global Inventor & Strategic Researcher',
+    image: '/saif.png',
+    whatsapp: '+966546503807',
+    email: 'saif@virex-ai.com',
+    description: 'Global Inventor & Strategic Researcher | Aviation Weather Specialist | MSc in Climate Change: Aviation Public Relations (UK)',
   },
   {
     id: 3,
