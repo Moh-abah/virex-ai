@@ -93,7 +93,8 @@ export default function AboutSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <span className="inline-block px-4 py-2 rounded-full bg-[#302b63]/5 text-[#302b63] text-sm font-medium mb-4">
+
+            <span className="inline-block px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#00C9A7] text-sm font-medium mb-4 animate-pulse">
             The Corporate Manifesto
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F0C29] mb-6">

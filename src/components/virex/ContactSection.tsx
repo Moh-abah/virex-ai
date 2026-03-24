@@ -81,7 +81,7 @@ const teamMembers = [
     name: 'ALAMRI, ALI MOHAMMAD A',
     role: 'Managing Director (MD)',
     title: 'Strategic Leadership & Business Development',
-    image: 'https://ui-avatars.com/api/?background=005F60&color=fff&size=100&name=AA',
+    image: '/ali.jpeg',
     whatsapp: '+966569920060',
     email: 'ali@virex-ai.com',
     description: 'Drives strategic vision and operational growth, ensuring alignment with organizational goals.',
