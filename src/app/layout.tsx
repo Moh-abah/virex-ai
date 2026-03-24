@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import Script from 'next/script';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -86,6 +87,13 @@ export default function RootLayout({
       >
         {children}
         <Toaster />
+
+        <Script
+          src="https://api.anvevoice.app/functions/v1/voice-assistant-embed-js?embedId=055dcd0f-21fc-4cda-af9e-0488fec83a53&position=bottom-right&theme=dark"
+          strategy="afterInteractive"
+        />
+
+
       </body>
     </html>
   );
