@@ -2,37 +2,36 @@
 "use client";
 
 import { useState } from "react";
-import { X, Minimize2, Maximize2, Phone } from "lucide-react";
+import { Phone, Minimize2 } from "lucide-react"; // or any icon library
 
 export default function AssistantPopup() {
- const [isExpanded, setIsExpanded] = useState(false); // false = مصغر, true = موسع
+ const [isExpanded, setIsExpanded] = useState(false); // false = minimized, true = expanded
 
- const toggleExpand = () => setIsExpanded(!isExpanded);
+ const expand = () => setIsExpanded(true);
  const minimize = () => setIsExpanded(false);
 
  return (
   <>
-   {/* الحالة المصغرة (شريط صغير) */}
+   {/* Minimized state: just a button */}
    {!isExpanded && (
     <button
-     onClick={toggleExpand}
+     onClick={expand}
      className="fixed bottom-5 right-5 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition-all z-50 flex items-center gap-2"
-     aria-label="توسيع المساعد"
+     aria-label="Open assistant"
     >
      <Phone className="w-5 h-5" />
-     <span className="hidden sm:inline">المساعد</span>
+     <span className="hidden sm:inline">Assistant</span>
     </button>
    )}
 
-   {/* الحالة الموسعة (iframe كامل) */}
+   {/* Expanded state: iframe with minimize button */}
    {isExpanded && (
     <div className="fixed bottom-5 right-5 z-50">
      <div className="relative">
-      {/* زر التصغير */}
       <button
        onClick={minimize}
        className="absolute top-2 right-2 bg-black/50 text-white p-1 rounded-full hover:bg-black/70 transition z-10"
-       aria-label="تصغير"
+       aria-label="Minimize"
       >
        <Minimize2 className="w-4 h-4" />
       </button>
