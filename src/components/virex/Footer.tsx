@@ -53,19 +53,25 @@ export default function Footer() {
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <a href="#hero" className="flex items-center gap-3 mb-6" onClick={(e) => { e.preventDefault(); scrollToSection('#hero'); }}>
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00C9A7] to-[#005F60] flex items-center justify-center shadow-lg shadow-[#00C9A7]/20">
-                <span className="text-white font-bold text-xl">V</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-white font-bold text-xl tracking-wide">VIREX</span>
-                <span className="text-[#00C9A7] text-xs font-medium tracking-widest">AI</span>
-              </div>
+
+
+            <a href="#hero" className="flex items-center mb-6" onClick={(e) => { e.preventDefault(); scrollToSection('#hero'); }}>
+              <img
+                src="/logoo.png"
+                alt="VIREX AI Logo"
+                className="h-[50px] w-auto object-contain"
+                style={{ background: 'transparent' }}
+              />
             </a>
+
+            
+
             <p className="text-gray-400 mb-6 leading-relaxed max-w-sm">
               The leading company in advanced custom software implementation, incubating deep innovations
               that redefine the boundaries of technology worldwide.
             </p>
+
+
 
             {/* Contact Info */}
             <div className="space-y-3">

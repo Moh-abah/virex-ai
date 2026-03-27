@@ -1,9 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Menu, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import Image from 'next/image'  // ✅ إضافة استيراد الصورة
 
 const navItems = [
   { name: 'Home', href: '#hero', id: 'hero' },
@@ -20,7 +21,6 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
 
-      // Update active section based on scroll position
       const sections = navItems.map(item => item.id)
       for (const section of sections.reverse()) {
         const element = document.getElementById(section)
@@ -63,29 +63,21 @@ export default function Header() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo - استخدام الصورة بدلاً من النص */}
           <a
             href="#hero"
             onClick={(e) => {
               e.preventDefault()
               scrollToSection('#hero')
             }}
-            className="flex items-center gap-3 group"
+            className="flex items-center group"
           >
-            <div className="relative">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#00C9A7] to-[#005F60] flex items-center justify-center shadow-lg shadow-[#00C9A7]/20 group-hover:shadow-[#00C9A7]/40 transition-shadow">
-                <span className="text-white font-bold text-lg">V</span>
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <span
-                className={`font-bold text-lg tracking-wide transition-colors ${isScrolled ? 'text-gray-300' : 'text-white'
-                  }`}
-              >
-                VIREX
-              </span>
-              <span className="text-[#00C9A7] text-xs font-medium tracking-widest">AI</span>
-            </div>
+            <img
+              src="/logoo.png"
+              alt="VIREX AI Logo"
+              className="h-[45px] w-auto object-contain"
+              style={{ background: 'transparent' }}
+            />
           </a>
 
           {/* Current Section Indicator - Desktop */}
@@ -112,10 +104,10 @@ export default function Header() {
                   scrollToSection(item.href)
                 }}
                 className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-lg ${activeSection === item.id
-                    ? 'text-[#00C9A7]'
-                    : isScrolled
-                      ? 'text-gray-400 hover:text-gray-200'
-                      : 'text-gray-300 hover:text-white'
+                  ? 'text-[#00C9A7]'
+                  : isScrolled
+                    ? 'text-gray-400 hover:text-gray-200'
+                    : 'text-gray-300 hover:text-white'
                   }`}
               >
                 {item.name}
@@ -155,11 +147,14 @@ export default function Header() {
               >
                 <div className="flex flex-col h-full">
                   <div className="flex items-center justify-between p-6 border-b border-white/10">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#00C9A7] to-[#005F60] flex items-center justify-center">
-                        <span className="text-white font-bold">V</span>
-                      </div>
-                      <span className="text-gray-300 font-bold text-lg">VIREX AI</span>
+                    {/* ✅ شعار الجوال: استخدام الصورة أيضاً */}
+                    <div className="relative w-[130px] h-[45px]">
+                      <Image
+                        src="/logoo.png"
+                        alt="VIREX AI Logo"
+                        fill
+                        className="object-contain"
+                      />
                     </div>
                   </div>
                   <nav className="flex-1 p-6">
@@ -173,8 +168,8 @@ export default function Header() {
                               scrollToSection(item.href)
                             }}
                             className={`block px-4 py-3 rounded-lg transition-colors ${activeSection === item.id
-                                ? 'bg-[#00C9A7]/10 text-[#00C9A7]'
-                                : 'text-gray-400 hover:bg-white/5 hover:text-gray-200'
+                              ? 'bg-[#00C9A7]/10 text-[#00C9A7]'
+                              : 'text-gray-400 hover:bg-white/5 hover:text-gray-200'
                               }`}
                           >
                             {item.name}
