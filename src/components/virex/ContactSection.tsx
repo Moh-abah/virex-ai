@@ -124,7 +124,7 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log('Form submitted:', formData)
-    window.location.href = `mailto:sales@virex-ai.com?subject=Service Request from ${formData.name}&body=${encodeURIComponent(formData.message)}`
+    window.location.href = `mailto:info@virex-ai.com?subject=Service Request from ${formData.name}&body=${encodeURIComponent(formData.message)}`
   }
 
   const openContactModal = (member: typeof teamMembers[0]) => {
