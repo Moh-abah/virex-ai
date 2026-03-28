@@ -2,39 +2,49 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, Minimize2 } from "lucide-react"; // or any icon library
+import { X, Minimize2, Maximize2, MessageSquare } from "lucide-react"; // استخدم أي أيقونات متوفرة لديك
 
 export default function AssistantPopup() {
- const [isExpanded, setIsExpanded] = useState(false); // false = minimized, true = expanded
+ const [isOpen, setIsOpen] = useState(false); // true = الإطار مفتوح، false = الزر فقط
 
- const expand = () => setIsExpanded(true);
- const minimize = () => setIsExpanded(false);
+ const toggleOpen = () => setIsOpen(!isOpen);
+ const close = () => setIsOpen(false);
 
  return (
   <>
-   {/* Minimized state: just a button */}
-   {!isExpanded && (
+   {/* الزر الذي يظهر عندما يكون الإطار مغلقاً */}
+   {!isOpen && (
     <button
-     onClick={expand}
-     className="fixed bottom-5 right-5 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition-all z-50 flex items-center gap-2"
-     aria-label="Open assistant"
+     onClick={toggleOpen}
+     className="fixed bottom-5 right-5 bg-primary text-white p-4 rounded-full shadow-lg hover:bg-primary/90 transition-all z-50"
+     aria-label="open Assistant"
     >
-     <Phone className="w-5 h-5" />
-     <span className="hidden sm:inline">Assistant</span>
+     <MessageSquare className="w-6 h-6" />
     </button>
    )}
 
-   {/* Expanded state: iframe with minimize button */}
-   {isExpanded && (
+   {/* الإطار المنبثق عندما يكون مفتوحاً */}
+   {isOpen && (
     <div className="fixed bottom-5 right-5 z-50">
      <div className="relative">
-      <button
-       onClick={minimize}
-       className="absolute top-2 right-2 bg-black/50 text-white p-1 rounded-full hover:bg-black/70 transition z-10"
-       aria-label="Minimize"
-      >
-       <Minimize2 className="w-4 h-4" />
-      </button>
+      {/* أزرار التحكم داخل الإطار */}
+      <div className="absolute top-2 right-2 flex gap-2 z-10">
+       <button
+        onClick={close}
+        className="bg-black/50 text-white p-1 rounded-full hover:bg-black/70 transition"
+        aria-label="close"
+       >
+        <X className="w-4 h-4" />
+       </button>
+       {/* يمكن إضافة زر تصغير إذا أردت الإبقاء على الإطار لكن بتصغير حجمه */}
+       {/* <button
+                onClick={() => console.log("تصغير")}
+                className="bg-black/50 text-white p-1 rounded-full hover:bg-black/70 transition"
+                aria-label="تصغير"
+              >
+                <Minimize2 className="w-4 h-4" />
+              </button> */}
+      </div>
 
       <iframe
        src="https://virex1-ai-1hicmx.sandbox.livekit.io"

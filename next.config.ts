@@ -8,7 +8,13 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Permissions-Policy",
-            value: "microphone=(self)",
+            // السماح للموقع الأساسي (self) وللنطاق الخارجي باستخدام الميكروفون والكاميرا
+            value: "microphone=(self https://virex1-ai-1hicmx.sandbox.livekit.io), camera=(self https://virex1-ai-1hicmx.sandbox.livekit.io)",
+          },
+          // إذا كان لديك CSP (سياسة أمان المحتوى) يمكن إضافتها أيضاً لتأكيد السماح بالإطار
+          {
+            key: "Content-Security-Policy",
+            value: "frame-src https://virex1-ai-1hicmx.sandbox.livekit.io;",
           },
         ],
       },

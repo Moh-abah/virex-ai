@@ -4,6 +4,8 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import Script from 'next/script';
 import AssistantPopup from "@/components/VoiceAgentButton";
+import Head from 'next/head';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -82,6 +84,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+
+      <Head>
+        <meta httpEquiv="Permissions-Policy" content="microphone=(self https://virex1-ai-1hicmx.sandbox.livekit.io), camera=(self https://virex1-ai-1hicmx.sandbox.livekit.io)" />
+      </Head>
+
+
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
