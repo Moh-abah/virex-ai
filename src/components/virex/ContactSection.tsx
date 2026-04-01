@@ -99,6 +99,16 @@ const teamMembers = [
   },
   {
     id: 3,
+    name: 'FENG, SHAOXU ',
+    role: 'General Manager, VIREX AI – China Branch',
+    title: 'General Manager, China Branch',
+    image: '/FENG.jpeg',
+    whatsapp: '',
+    email: 'FENG@virex-ai.com',
+    description: 'Responsible for negotiating, overseeing, and coordinating with execution companies for our projects, ensuring all operations in Shanghai meet the highest professional standards.',
+  },
+  {
+    id: 4,
     name: 'MOHAMMED YAHYA ALI ALI ABAH',
     role: 'Technical Solutions Specialist (TSS)',
     title: 'Technical Solutions Specialist',
