@@ -102,9 +102,9 @@ const teamMembers = [
     name: 'FENG, SHAOXU ',
     role: 'General Manager, VIREX AI – China Branch',
     title: 'General Manager, China Branch',
-    image: '/Feng.jpeg',
+    image: '/FENG.jpeg',
     whatsapp: '',
-    email: 'FENG@virex-ai.com',
+    email: 'feng@virex-ai.com',
     description: 'Responsible for negotiating, overseeing, and coordinating with execution companies for our projects, ensuring all operations in Shanghai meet the highest professional standards.',
   },
   {

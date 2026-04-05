@@ -15,12 +15,17 @@ export default function HeroSection() {
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      dir="ltr" // English content, left-to-right
+      dir="ltr"
     >
-      {/* Background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0F0C29] via-[#302b63] to-[#004e92]" />
+      {/* Background image with dark overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/hero.png')" }}
+      />
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/60" />
 
-      {/* Animated background elements */}
+      {/* Animated background elements (optional, keep for visual flair) */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Grid pattern */}
         <div
@@ -32,10 +37,10 @@ export default function HeroSection() {
           }}
         />
 
-        {/* Floating orbs */}
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#00C9A7]/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-[#004e92]/30 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#302b63]/50 rounded-full blur-3xl" />
+        {/* Floating orbs - reduced opacity */}
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#00C9A7]/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-[#004e92]/20 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#302b63]/30 rounded-full blur-3xl" />
 
         {/* Floating particles */}
         {[...Array(20)].map((_, i) => (
